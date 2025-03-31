@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import fiscalo from "@fiscalo/js";
+import formbricks from "@formbricks/js";
 import fbsetup from "../public/fb-setup.png";
 
 declare const window: Window;
@@ -39,7 +39,7 @@ export default function AppPage(): React.JSX.Element {
       addFormbricksDebugParam();
 
       if (process.env.NEXT_PUBLIC_FORMBRICKS_ENVIRONMENT_ID && process.env.NEXT_PUBLIC_FORMBRICKS_API_HOST) {
-        void fiscalo.setup({
+        void formbricks.setup({
           environmentId: process.env.NEXT_PUBLIC_FORMBRICKS_ENVIRONMENT_ID,
           appUrl: process.env.NEXT_PUBLIC_FORMBRICKS_API_HOST,
         });
@@ -126,14 +126,14 @@ export default function AppPage(): React.JSX.Element {
               Set a user ID / pull data from Formbricks app
             </h3>
             <p className="text-slate-700 dark:text-slate-300">
-              On fiscalo.setUserId() the user state will <strong>be fetched from Formbricks</strong> and
+              On formbricks.setUserId() the user state will <strong>be fetched from Formbricks</strong> and
               the local state gets <strong>updated with the user state</strong>.
             </p>
             <button
               className="my-4 rounded-lg bg-slate-500 px-6 py-3 text-white hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600"
               type="button"
               onClick={() => {
-                void fiscalo.setUserId(userId);
+                void formbricks.setUserId(userId);
               }}>
               Set user ID
             </button>
@@ -178,7 +178,7 @@ export default function AppPage(): React.JSX.Element {
               <button
                 type="button"
                 onClick={() => {
-                  void fiscalo.setAttribute("Plan", "Free");
+                  void formbricks.setAttribute("Plan", "Free");
                 }}
                 className="mb-4 rounded-lg bg-slate-800 px-6 py-3 text-white hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600">
                 Set Plan to &apos;Free&apos;
@@ -203,7 +203,7 @@ export default function AppPage(): React.JSX.Element {
               <button
                 type="button"
                 onClick={() => {
-                  void fiscalo.setAttribute("Plan", "Paid");
+                  void formbricks.setAttribute("Plan", "Paid");
                 }}
                 className="mb-4 rounded-lg bg-slate-800 px-6 py-3 text-white hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600">
                 Set Plan to &apos;Paid&apos;
@@ -228,7 +228,7 @@ export default function AppPage(): React.JSX.Element {
               <button
                 type="button"
                 onClick={() => {
-                  void fiscalo.setEmail("test@web.com");
+                  void formbricks.setEmail("test@web.com");
                 }}
                 className="mb-4 rounded-lg bg-slate-800 px-6 py-3 text-white hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600">
                 Set Email
@@ -254,7 +254,7 @@ export default function AppPage(): React.JSX.Element {
               <button
                 type="button"
                 onClick={() => {
-                  void fiscalo.setAttributes(userAttributes);
+                  void formbricks.setAttributes(userAttributes);
                 }}
                 className="mb-4 rounded-lg bg-slate-800 px-6 py-3 text-white hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600">
                 Set Multiple Attributes
@@ -280,7 +280,7 @@ export default function AppPage(): React.JSX.Element {
               <button
                 type="button"
                 onClick={() => {
-                  void fiscalo.setLanguage("de");
+                  void formbricks.setLanguage("de");
                 }}
                 className="mb-4 rounded-lg bg-slate-800 px-6 py-3 text-white hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600">
                 Set Language to &apos;de&apos;
@@ -307,7 +307,7 @@ export default function AppPage(): React.JSX.Element {
                 type="button"
                 className="mb-4 rounded-lg bg-slate-800 px-6 py-3 text-white hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600"
                 onClick={() => {
-                  void fiscalo.track("code");
+                  void formbricks.track("code");
                 }}>
                 Code Action
               </button>
@@ -340,7 +340,7 @@ export default function AppPage(): React.JSX.Element {
                 type="button"
                 className="mb-4 rounded-lg bg-slate-800 px-6 py-3 text-white hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600"
                 onClick={() => {
-                  void fiscalo.logout();
+                  void formbricks.logout();
                 }}>
                 Logout
               </button>

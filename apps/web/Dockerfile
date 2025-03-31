@@ -123,11 +123,9 @@ ENV NODE_ENV="production"
 
 # Prepare volume for uploads
 RUN mkdir -p /home/nextjs/apps/web/uploads/
-VOLUME /home/nextjs/apps/web/uploads/
 
 # Prepare volume for SAML preloaded connection
 RUN mkdir -p /home/nextjs/apps/web/saml-connection
-VOLUME /home/nextjs/apps/web/saml-connection
 
 CMD if [ "${DOCKER_CRON_ENABLED:-1}" = "1" ]; then \
       echo "Starting cron jobs..."; \
