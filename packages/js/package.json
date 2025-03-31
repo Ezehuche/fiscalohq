@@ -1,0 +1,49 @@
+{
+  "name": "@fiscalo/js",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "Fiscalo-js allows you to connect your index to Fiscalo, display surveys and trigger events.",
+  "homepage": "https://www.fiscalohq.com",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "surveys",
+    "experience management"
+  ],
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "dev": "vite build --watch --mode dev",
+    "build": "tsc && vite build",
+    "build:dev": "tsc && vite build --mode dev",
+    "go": "vite build --watch --mode dev",
+    "lint": "eslint . --ext .ts,.js,.tsx,.jsx",
+    "clean": "rimraf .turbo node_modules dist coverage"
+  },
+  "author": "Fiscalo <uche@fiscalohq.com>",
+  "devDependencies": {
+    "@formbricks/js-core": "workspace:*",
+    "@formbricks/config-typescript": "workspace:*",
+    "@formbricks/eslint-config": "workspace:*",
+    "terser": "5.37.0",
+    "vite": "6.0.12",
+    "vite-plugin-dts": "4.3.0"
+  }
+}
