@@ -108,7 +108,7 @@ COPY --from=installer --chown=nextjs:nextjs /app/node_modules/@prisma/client ./n
 COPY --from=installer --chown=nextjs:nextjs /app/node_modules/.prisma ./node_modules/.prisma
 
 COPY --from=installer --chown=nextjs:nextjs /prisma_version.txt .
-COPY /docker/cronjobs /app/docker/cronjobs
+COPY docker/cronjobs /app/docker/cronjobs
 
 # Copy required dependencies
 COPY --from=installer /app/node_modules/@paralleldrive/cuid2 ./node_modules/@paralleldrive/cuid2
