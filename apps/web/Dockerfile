@@ -66,9 +66,10 @@ RUN pnpm install
 
 # Build the project using our secret reader script
 # This mounts the secrets only during this build step without storing them in layers
-RUN --mount=type=secret,id=database_url \
-    --mount=type=secret,id=encryption_key \
-    /tmp/read-secrets.sh pnpm build --filter=@formbricks/web...
+# RUN --mount=type=secret,id=database_url \
+#     --mount=type=secret,id=encryption_key \
+#     /tmp/read-secrets.sh pnpm build --filter=@formbricks/web...
+RUN pnpm build --filter=@formbricks/web...
 
 # Extract Prisma version
 RUN jq -r '.devDependencies.prisma' packages/database/package.json > /prisma_version.txt
